@@ -9,7 +9,7 @@ auth.onAuthStateChanged(user => {
       setupUI();
       setupGuides([]);
     }
-  })
+  });
 
   // create new guide
 const createForm = document.querySelector('#create-form');
@@ -28,7 +28,7 @@ createForm.addEventListener('submit', (e) => {
   });
 });
   
-  // signup
+// signup
   const signupForm = document.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -49,13 +49,16 @@ createForm.addEventListener('submit', (e) => {
   // logout
   const logout = document.querySelector('#logout');
   logout.addEventListener('click', (e) => {
+    console.log("User Logged out")
     e.preventDefault();
     auth.signOut();
   });
 
   // logout_mobile
   const logout_mobile = document.querySelector('#logout_mobile');
+  
   logout_mobile.addEventListener('click', (e) => {
+    console.log("User Logged out")
     e.preventDefault();
     auth.signOut();
   });
