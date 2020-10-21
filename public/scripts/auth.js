@@ -35,6 +35,12 @@ auth.onAuthStateChanged(user => {
     e.preventDefault();
     auth.signOut();
   });
+
+  const logout_mobile = document.querySelector('#logout_mobile');
+  logout_mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut();
+  });
   
   // login
   const loginForm = document.querySelector('#login-form');
