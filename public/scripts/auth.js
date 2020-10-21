@@ -55,10 +55,8 @@ createForm.addEventListener('submit', (e) => {
   });
 
   // logout_mobile
-  const logout_mobile = document.querySelector('#logout_mobile');
-  
-  logout_mobile.addEventListener('click', (e) => {
-    console.log("User Logged out")
+  const mobileLogout = document.querySelector('#logout_mobile');
+  mobileLogout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
   });
