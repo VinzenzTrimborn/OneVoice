@@ -8,6 +8,7 @@ auth.onAuthStateChanged(user => {
     } else {
       setupUI();
       setupGuides([]);
+      console.log('Master')
     }
   })
 
