@@ -8,7 +8,6 @@ auth.onAuthStateChanged(user => {
     } else {
       setupUI();
       setupGuides([]);
-      console.log('Master')
     }
   })
 
@@ -50,6 +49,13 @@ createForm.addEventListener('submit', (e) => {
   // logout
   const logout = document.querySelector('#logout');
   logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut();
+  });
+
+  // logout_mobile
+  const logout_mobile = document.querySelector('#logout_mobile');
+  logout_mobile.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
   });
