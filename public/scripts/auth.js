@@ -4,7 +4,7 @@ auth.onAuthStateChanged(user => {
       db.collection('guide').onSnapshot(snapshot => {
         setupGuides(snapshot.docs);
         setupUI(user);
-      });
+      }, err => console.log(err.message));
     } else {
       setupUI();
       setupGuides([]);
@@ -28,7 +28,7 @@ createForm.addEventListener('submit', (e) => {
   });
 });
   
-  // signup
+// signup
   const signupForm = document.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -43,12 +43,16 @@ createForm.addEventListener('submit', (e) => {
       const modal = document.querySelector('#modal-signup');
       M.Modal.getInstance(modal).close();
       signupForm.reset();
+      signupForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+      signupForm.querySelector('.error').innerHTML = err.message;
     });
   });
   
   // logout
   const logout = document.querySelector('#logout');
   logout.addEventListener('click', (e) => {
+    console.log("User Logged out")
     e.preventDefault();
     auth.signOut();
   });
@@ -75,6 +79,8 @@ createForm.addEventListener('submit', (e) => {
       const modal = document.querySelector('#modal-login');
       M.Modal.getInstance(modal).close();
       loginForm.reset();
-    });
-  
+      loginForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+      loginForm.querySelector('.error').innerHTML = err.message;
+    })
   });
