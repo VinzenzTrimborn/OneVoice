@@ -11,10 +11,14 @@
 
     <style>
       header{
-        background: url(bundestag.jpg);
+        background: url(images/bundestag.jpg);
         background-size: cover;
         background-position: center;
         min-height: 500px;
+      }
+      .section{
+        padding-top: 4vw;
+        padding-bottom: 4vw;
       }
       @media screen and (max-width: 670px){
         header{
@@ -73,6 +77,44 @@
     </nav>
   </header>
 
+
+  <section class="container section"id="photos">
+    <div class="row">
+      <div class="col s12 l4">
+        <img src="images/fff.jpg" alt="" class="responsive-img materialboxed">
+    </div>
+      <div class="col s12 l6 offset-l1">
+      <h2 class="grey-text text-darken-2">Our Story</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4 offset-l1 push-l7">
+        <img src="images/fff.jpg" alt="" class="responsive-img materialboxed">
+    </div>
+      <div class="col s12 l6 offset-l1 pull-l5 right-align">
+      <h2 class="grey-text text-darken-2">Our Story</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4">
+        <img src="images/fff.jpg" alt="" class="responsive-img materialboxed">
+    </div>
+      <div class="col s12 l6 offset-l1">
+      <h2 class="grey-text text-darken-2">Our Story</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+     </div>
+    </div>
+  </section>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="images/pexels-markus-spiske-2990650.jpg" alt="" class="responsive-img">
+    </div>
+  </div>
+
+
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
       <div class="modal-content">
@@ -119,6 +161,8 @@
       </div>
     </div>
 
+
+
     <!-- CREATE GUIDE MODAL -->
     <div id="modal-create" class="modal">
       <div class="modal-content">
@@ -147,7 +191,7 @@
       <div class="col s12 l6">
         <div class="card">
           <div class="card-image">
-            <img src="bundestag.jpg" alt="">
+            <img src="images/bundestag.jpg" alt="">
             <a href="" class="halfway-fab btn-floating pink pulse">
               <i class="material-icons">check</i>
             </a>
@@ -165,7 +209,7 @@
       <div class="col s12 l6">
         <div class="card">
           <div class="card-image">
-            <img src="fff.jpg" alt="">
+            <img src="images/fff.jpg" alt="">
             <a href="" class="halfway-fab btn-floating pink pulse">
               <i class="material-icons">check</i>
             </a>
@@ -179,6 +223,12 @@
             <a href="">vote</a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="images/pexels-pixabay-373543.jpg" alt="" class="responsive-img">
       </div>
     </div>
 
@@ -214,6 +264,8 @@
     <script>
       $(document).ready(function(){
       $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
       });
     </script>
     
