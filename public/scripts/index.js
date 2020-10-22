@@ -1,5 +1,5 @@
 // DOM elements
-const guideList = document.querySelector('.guides');
+const questionList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
@@ -22,24 +22,24 @@ const setupUI = (user) => {
   }
 };
 
-// setup guides
-const setupGuides = (data) => {
+// setup questions
+const setupQuestions = (data) => {
 
   if (data.length) {
     let html = '';
     data.forEach(doc => {
-      const guide = doc.data();
+      const question = doc.data();
       const li = `
         <li>
-          <div class="collapsible-header grey lighten-4"> ${guide.title} </div>
-          <div class="collapsible-body white"> ${guide.content} </div>
+          <div class="collapsible-header grey lighten-4"> ${question.title} </div>
+          <div class="collapsible-body white"> ${question.content} </div>
         </li>
       `;
       html += li;
     });
-    guideList.innerHTML = html
+    questionList.innerHTML = html
   } else {
-    guideList.innerHTML = '<h5 class="center-align">Login to attend election</h5>';
+    questionList.innerHTML = '<h5 class="center-align">Login to attend election</h5>';
   }
   
 

@@ -1,21 +1,21 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-      db.collection('guide').onSnapshot(snapshot => {
-        setupGuides(snapshot.docs);
+      db.collection('questions').onSnapshot(snapshot => {
+        setupQuestions(snapshot.docs);
         setupUI(user);
       }, err => console.log(err.message));
     } else {
       setupUI();
-      setupGuides([]);
+      setupQuestions([]);
     }
   });
 
-  // create new guide
+  // create new question
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  db.collection('guide').add({
+  db.collection('questions').add({
     title: createForm.title.value,
     content: createForm.content.value
   }).then(() => {
