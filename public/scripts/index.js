@@ -24,15 +24,26 @@ const setupUI = (user) => {
 
 // setup questions
 const setupQuestions = (data) => {
-
     if (data.length) {
         let html = '';
         data.forEach(doc => {
             const question = doc.data();
             const li = `
-        <li>
-          <div class="collapsible-header grey lighten-4"> ${question.title} </div>
-          <div class="collapsible-body white"> ${question.content} </div>
+        <li class="collection-header">
+            <div><h6>${question.title}</h6></div>
+        </li>
+
+        <li class="collection-item">
+            <div>${question.content}<a href="#!" class="secondary-content">
+                <label>
+                    <input type="checkbox"/>
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="checkbox"/>
+                    <span>  No</span>
+                </label>
+            </a></div>
         </li>
       `;
             html += li;
